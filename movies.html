@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Filmy</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="movies-page">
+        <div class="header-movies-wrapper">
+            <header class="page-header">
+
+                <div class="container">
+                    <button class="home-button" onclick="window.location.href='index.html'">
+                        Úvodní strana
+                    </button>
+                </div>
+
+
+            </header>
+        </div>
+
+
+        <div class="filter-container-wrapper">
+            <div class="filter-container">
+                <select id="movieFilter" class="filter-dropdown">
+                    <option value="">Vyberte možnost</option>
+                    <option value="girl">Girl</option>
+                    <option value="boy">Boy</option>
+                    <option value="action">Action</option>
+                    <option value="drama">Drama</option>
+                    <option value="comedy">Comedy</option>
+                </select>
+            </div>
+        </div>
+
+        <main class="movies-content">
+            <div class="container">
+                <div id="loadingSpinner" class="loading hidden">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    Načítání filmů...
+                </div>
+
+                <div id="moviesGrid" class="movies-grid-page">
+                    <!-- /CS/ Filmy se načtou dynamicky přes JavaScript -->
+                    <!-- /EN/ Movies will be loaded dynamically via JavaScript -->
+                </div>
+
+                <div id="noResults" class="no-results hidden">
+                    <p>Nebyly nalezeny žádné filmy pro vybraný filtr.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="movies.js"></script>
+</body>
+
+</html>

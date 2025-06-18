@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Registrace</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="registration-page">
+        <header class="page-header">
+            <div class="container">
+                <div class="netflix-logo">
+                    <img src="images/netflix-logo.png" alt="Netflix Logo">
+                </div>
+                <button class="home-button" onclick="window.location.href='index.html'">
+                    Úvodní strana
+                </button>
+            </div>
+        </header>
+
+        <main class="registration-content">
+            <form class="registration-form" id="registrationForm">
+                <h2>Vytvořte si účet</h2>
+
+                <!-- /CS/ Formulář pro přihlášení-->
+                <!-- /EN/ Registration form -->
+
+                <div class="form-group">
+                    <input type="text" id="firstName" name="firstName" placeholder="Křestní jméno" required
+                        minlength="2">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="lastName" name="lastName" placeholder="Příjmení" required minlength="2">
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Přihlašovací email" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder="Vaše heslo" required
+                        minlength="6">
+                </div>
+
+                <div class="form-group">
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Heslo znovu"
+                        required minlength="6">
+                </div>
+
+                <div class="password-match-indicator" id="passwordMatchIndicator">
+                    <!-- /CS/ Zobrazí se zpráva o shodě hesel -->
+                    <!-- /EN/ Message about password match will be displayed -->
+                </div>
+
+                <button type="submit" class="submit-button" id="submitButton" disabled>
+                    Odeslat
+                </button>
+            </form>
+        </main>
+    </div>
+
+    <script src="register.js"></script>
+</body>
+
+</html>

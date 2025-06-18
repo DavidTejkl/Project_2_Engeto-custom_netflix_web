@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix by David Tejkl</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- /CS/ Header sekce -->
+    <!-- /EN/ Header section -->
+    <header class="header">
+        <div class="container">
+            <div class="netflix-logo">
+                <img src="images/netflix-logo.png" alt="Netflix Logo">
+            </div>
+            <button class="register-btn" onclick="window.location.href='register.html'">
+                Registrace
+            </button>
+        </div>
+    </header>
+
+    <!-- /CS/ Hero sekce -->
+    <!-- /EN/ Hero section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Neomezené sledování filmů, TV pořadů a dalšího obsahu</h1>
+            <p class="hero-subtitle">Už od 239 Kč. Zrušte kdykoli.</p>
+            <p class="hero-description">
+                Jste připraveni se dívat? Pro vytvoření nebo obnovení členství zadejte e-mail.
+            </p>
+
+            <form class="email-form" id="emailForm">
+                <div class="email-input-container">
+                    <input type="email" id="emailInput" placeholder="E-mailová adresa" required>
+                    <button type="submit" class="cta-button">
+                        Začít <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- /CS/ Nejsledovanější filmy sekce -->
+    <!-- /EN/ Trending movies section -->
+    <section class="trending-movies">
+        <div class="container">
+            <div class="movies-grid">
+                <div class="movie-card">
+                    <div class="movie-poster avengers"></div>
+                    <h3>Avengers: Infinity War</h3>
+                </div>
+                <div class="movie-card">
+                    <div class="movie-poster bugs-life"></div>
+                    <h3>A Bug's Life</h3>
+                </div>
+                <div class="movie-card">
+                    <div class="movie-poster thor"></div>
+                    <h3>Thor</h3>
+                </div>
+            </div>
+
+            <button class="find-more-btn" onclick="window.location.href='movies.html'">
+                Najít další filmy
+            </button>
+        </div>
+    </section>
+
+    <!-- /CS/ Footer sekce -->
+    <!-- /EN/ Footer section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="#">Často kladené dotazy</a></li>
+                        <li><a href="#">Vztahy s investory</a></li>
+                        <li><a href="#">Jak se dívat</a></li>
+                        <li><a href="#">Podnikové informace</a></li>
+                        <li><a href="#">Právní oznámení</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="#">Centrum zákaznické podpory</a></li>
+                        <li><a href="#">Kariéra</a></li>
+                        <li><a href="#">Podmínky použití</a></li>
+                        <li><a href="#">Kontaktujte nás</a></li>
+                        <li><a href="#">Pouze na Netflixu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="#">Účet</a></li>
+                        <li><a href="#">Uplatnění dárkové poukázky</a></li>
+                        <li><a href="#">Soukromí</a></li>
+                        <li><a href="#">Test rychlosti</a></li>
+                        <li><a href="#">Reklamy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="#">Pro média</a></li>
+                        <li><a href="#">Koupit dárkové poukázky</a></li>
+                        <li><a href="#">Nastavení souborů cookie</a></li>
+                        <li><a href="#">Právní záruky</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- /CS/ Scroll to Top tlačítko -->
+    <!-- /EN/ Scroll to Top button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="far fa-circle-up"></i>
+    </button>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

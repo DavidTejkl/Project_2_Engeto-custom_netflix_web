@@ -1,0 +1,841 @@
+/* /CS/ CSS proměnné pro barvy a další globální styly */
+/* /EN/ CSS variables for colors and other global styles */
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-netflix-red: rgb(214, 28, 28);
+    --color-netflix-red-dark: rgb(190, 25, 25);
+    --color-grey-333: #333;
+    --color-black-70-opacity: rgba(0, 0, 0, 0.7);
+    --color-grey-8c8c8c: #8c8c8c;
+    --color-grey-757575: #757575;
+    --color-grey-1a1a1a: #1a1a1a;
+    --color-grey-ccc: #ccc;
+    --color-netflix-red-80-opacity: rgba(214, 28, 28, 0.8);
+    --color-grey-999: #999;
+    --color-success-green: #28a745;
+    --color-error-red: #dc3545;
+    --color-success-green-10-opacity: rgba(40, 167, 69, 0.1);
+    --color-error-red-10-opacity: rgba(220, 53, 69, 0.1);
+    --color-warning-yellow-20-opacity: rgba(255, 193, 7, 0.2);
+    --color-warning-yellow: #ffc107;
+    --color-grey-666: #666;
+    --color-black-50-opacity: rgba(0, 0, 0, 0.5);
+}
+
+/* /CS/ Reset a základní styly */
+/* /EN/ Reset and basic styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    line-height: 1.4;
+}
+
+.container {
+    width: 100%;
+    margin: 10px 0px;
+    padding: 0 20px;
+}
+
+/* /CS/ Netflix Logo */
+/* /EN/ Netflix Logo */
+
+.netflix-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--color-netflix-red);
+    letter-spacing: 2px;
+}
+
+.netflix-logo img {
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+/* /CS/ Header styly */
+/* /EN/ Header styles */
+
+.header {
+    padding: 20px 0;
+    position: relative;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.header.hidden-mobile {
+    transform: translateY(-100%);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+.register-btn {
+    background-color: var(--color-netflix-red);
+    color: var(--color-white);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.5s ease, font-size 0.5s ease;
+}
+
+.register-btn:hover {
+    background-color: var(--color-netflix-red-dark);
+    transform: scale(1.2);
+    font-size: 18px;
+}
+
+/* /CS/ Hero sekce */
+/* /EN/ Hero section */
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-black-70-opacity);
+    background-blend-mode: overlay;
+}
+
+.hero h1 {
+    font-size: 3.125rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* /CS/ Email formulář */
+/* /EN/ Email form */
+
+.email-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.email-input-container {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+}
+
+#emailInput {
+    flex: 1;
+    max-width: 400px;
+    padding: 16px 16px;
+    font-size: 16px;
+    border: 1px solid var(--color-grey-333);
+    border-radius: 4px 0 0 4px;
+    background-color: var(--color-black-70-opacity);
+    color: var(--color-white);
+}
+
+#emailInput::placeholder {
+    color: var(--color-grey-8c8c8c);
+}
+
+#emailInput:focus {
+    outline: none;
+    border-color: var(--color-netflix-red);
+}
+
+.cta-button {
+    background-color: var(--color-netflix-red);
+    color: var(--color-white);
+    border: none;
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.cta-button:hover {
+    background-color: var(--color-netflix-red-dark);
+}
+
+.cta-button i {
+    margin-left: 8px;
+}
+
+/* /CS/ Nejsledovanější filmy sekce */
+/* /EN/ Trending movies section */
+
+.trending-movies {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.movie-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* /CS/ Placeholder obrázky pro filmy */
+/* /EN/ Placeholder images for movies */
+.avengers {
+    background-image: url('../images/avengers.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+
+.bugs-life {
+    background-image: url('../images/bugs-life.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+
+.thor {
+    background-image: url('../images/thor.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-weight: bold;
+}
+
+
+.movie-card h3 {
+    color: var(--color-white);
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.find-more-btn {
+    background-color: var(--color-netflix-red);
+    color: var(--color-white);
+    border: none;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.find-more-btn:hover {
+    background-color: var(--color-netflix-red-dark);
+}
+
+/* /CS/ Footer styly */
+/* /EN/ Footer styles */
+.footer {
+    background-color: var(--color-black);
+    padding: 60px 0 40px;
+    border-top: 1px solid var(--color-grey-333);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 40px;
+    text-align: center;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 12px;
+}
+
+.footer-column a {
+    color: var(--color-grey-757575);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--color-white);
+}
+
+/* /CS/ Scroll to Top tlačítko */
+/* /EN/ Scroll to Top button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-netflix-red-80-opacity);
+    border: none;
+    border-radius: 50%;
+    color: var(--color-white);
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--color-netflix-red);
+    transform: scale(1.1);
+}
+
+/* /CS/ Styly pro stránku s filmy */
+/* /EN/ Styles for the movies page */
+.movies-page {
+    background-color: var(--color-black);
+    min-height: 100vh;
+    color: var(--color-white);
+}
+
+.page-header {
+    padding: 20px 0;
+}
+
+.page-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-movies-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+
+.home-button {
+    background-color: var(--color-netflix-red);
+    color: var(--color-white);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.5s ease, font-size 0.5s ease;
+}
+
+.home-button:hover {
+    background-color: var(--color-netflix-red-dark);
+    transform: scale(1.2);
+    font-size: 18px;
+}
+
+.filter-dropdown {
+    background-color: var(--color-grey-333);
+    color: var(--color-white);
+    border: 1px solid #555;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 16px;
+    min-width: 200px;
+    cursor: pointer;
+}
+
+.filter-dropdown:focus {
+    outline: none;
+    border-color: var(--color-netflix-red);
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+}
+
+.movies-content {
+    padding: 40px 0;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.movies-grid-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.movie-card-page {
+    background-color: var(--color-grey-1a1a1a);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.movie-card-page.hovered {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(214, 28, 28, 0.3);
+}
+
+.movie-poster-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-poster-page {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.movie-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-black-70-opacity);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.movie-card-page:hover .movie-overlay {
+    opacity: 1;
+}
+
+.play-button {
+    background-color: var(--color-netflix-red);
+    color: var(--color-white);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+}
+
+.movie-info {
+    padding: 20px;
+}
+
+.movie-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-white);
+}
+
+.movie-summary {
+    font-size: 14px;
+    color: var(--color-grey-ccc);
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.movie-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--color-grey-999);
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: var(--color-grey-ccc);
+}
+
+.loading i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--color-grey-ccc);
+}
+
+.error-message {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--color-netflix-red);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* /CS/ Styly pro registrační formulář */
+/* /EN/ Styles for the registration form */
+.registration-page {
+    background-color: var(--color-black);
+    min-height: 100vh;
+    color: var(--color-white);
+}
+
+.registration-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+    padding: 40px 20px;
+}
+
+.registration-form {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 60px 40px;
+    border-radius: 8px;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 10px 30px var(--color-black-50-opacity);
+}
+
+.registration-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--color-grey-333);
+    border: 2px solid #555;
+    border-radius: 4px;
+    color: var(--color-white);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-netflix-red);
+}
+
+.form-group input::placeholder {
+    color: var(--color-grey-999);
+}
+
+/* /CS/ Styly pro validaci emailu */
+/* /EN/ Styles for email validation */
+#emailInput.valid {
+    border-color: var(--color-success-green);
+}
+
+#emailInput.invalid {
+    border-color: var(--color-error-red);
+}
+
+/* /CS/ Validační stavy */
+/* /EN/ Validation states */
+.form-group input.valid {
+    border-color: var(--color-success-green);
+    background-color: var(--color-success-green-10-opacity);
+}
+
+.form-group input.invalid {
+    border-color: var(--color-error-red);
+    background-color: var(--color-error-red-10-opacity);
+}
+
+.password-match-indicator {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    display: none;
+}
+
+.password-match-indicator.success {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: var(--color-success-green);
+    border: 1px solid var(--color-success-green);
+}
+
+.password-match-indicator.error {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: var(--color-error-red);
+    border: 1px solid var(--color-error-red);
+}
+
+.password-match-indicator.warning {
+    background-color: var(--color-warning-yellow-20-opacity);
+    color: var(--color-warning-yellow);
+    border: 1px solid var(--color-warning-yellow);
+}
+
+.submit-button {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--color-netflix-red);
+    color: var(--color-white);
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.submit-button:hover:not(:disabled) {
+    background-color: var(--color-netflix-red-dark);
+}
+
+.submit-button:disabled {
+    background-color: var(--color-grey-666);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.success-message {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.success-message i {
+    font-size: 48px;
+    color: var(--color-success-green);
+    margin-bottom: 20px;
+}
+
+.success-message h2 {
+    color: var(--color-success-green);
+    margin-bottom: 15px;
+}
+
+/* /CS/ Responzivní design */
+/* /EN/ Responsive design */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .email-input-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #emailInput {
+        max-width: 100%;
+        border-radius: 4px;
+    }
+
+    .cta-button {
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .movies-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .movies-grid-page {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .movies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .movies-grid-page {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .footer-content {
+        flex-wrap: wrap;
+    }
+
+    .footer-column {
+        flex: 0 0 48%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .movies-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .movies-grid-page {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .footer-content {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .footer-column {
+        flex: 0 0 48%;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .movies-grid-page {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero {
+        display: flex;
+        /* Use flexbox for centering content */
+        justify-content: center;
+        /* Center content horizontally */
+        align-items: center;
+        /* Center content vertically */
+        height: 100vh;
+        /* Set height to 100% of viewport height */
+        text-align: center;
+        /* Keep text centered within the container */
+        padding: 0;
+        /* Remove padding as flexbox handles vertical spacing */
+        background-image: url('../images/background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-color: var(--color-black-70-opacity);
+        /* Add a fallback or overlay */
+        background-blend-mode: overlay;
+        /* Blend the image with the background color */
+    }
+
+    .movies-grid-page {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 35px;
+    }
+}
