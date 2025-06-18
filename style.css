@@ -814,24 +814,16 @@ body {
 @media (min-width: 1200px) {
     .hero {
         display: flex;
-        /* Use flexbox for centering content */
         justify-content: center;
-        /* Center content horizontally */
         align-items: center;
-        /* Center content vertically */
         height: 100vh;
-        /* Set height to 100% of viewport height */
         text-align: center;
-        /* Keep text centered within the container */
         padding: 0;
-        /* Remove padding as flexbox handles vertical spacing */
-        background-image: url('../images/background.jpg');
+        background-image: url('images/background.jpg');
         background-size: cover;
         background-position: center;
         background-color: var(--color-black-70-opacity);
-        /* Add a fallback or overlay */
         background-blend-mode: overlay;
-        /* Blend the image with the background color */
     }
 
     .movies-grid-page {
