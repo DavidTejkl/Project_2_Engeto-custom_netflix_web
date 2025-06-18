@@ -111,7 +111,7 @@ body {
     height: 100vh;
     text-align: center;
     padding: 0;
-    background-image: url('../images/background.jpg');
+    background-image: url('images/background.jpg');
     background-size: cover;
     background-position: center;
     background-color: var(--color-black-70-opacity);
@@ -239,7 +239,7 @@ body {
 /* /CS/ Placeholder obrázky pro filmy */
 /* /EN/ Placeholder images for movies */
 .avengers {
-    background-image: url('../images/avengers.jpg');
+    background-image: url('images/avengers.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -251,7 +251,7 @@ body {
 
 
 .bugs-life {
-    background-image: url('../images/bugs-life.jpeg');
+    background-image: url('images/bugs-life.jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -263,7 +263,7 @@ body {
 
 
 .thor {
-    background-image: url('../images/thor.jpeg');
+    background-image: url('images/thor.jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
